@@ -7,20 +7,11 @@ import dagger.Provides;
  * Created by Mohamed Hashim on 6/13/2020.
  */
 @Module
-class CoffeModule {
-    int sugar;
-
-    public CoffeModule(int sugar) {
-        this.sugar = sugar;
-    }
+public class CoffeModule {
+    //remove integer sugar and constructor to create component builder
 
     @Provides
-    River makeRiver(){
+    River makeRiver() {
         return new River();
-    }
-
-    @Provides
-    int getSugar(){
-        return sugar;
     }
 }
