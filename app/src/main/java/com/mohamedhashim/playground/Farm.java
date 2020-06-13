@@ -1,0 +1,13 @@
+package com.mohamedhashim.playground;
+
+import javax.inject.Inject;
+
+/**
+ * Created by Mohamed Hashim on 6/13/2020.
+ */
+class Farm {
+
+    @Inject
+    public Farm() {
+    }
+}
