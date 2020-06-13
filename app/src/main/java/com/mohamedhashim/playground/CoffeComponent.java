@@ -5,7 +5,7 @@ import dagger.Component;
 /**
  * Created by Mohamed Hashim on 6/13/2020.
  */
-@Component
+@Component (modules = CoffeModule.class)
 interface CoffeComponent {
     Coffe getCoffe();
 
