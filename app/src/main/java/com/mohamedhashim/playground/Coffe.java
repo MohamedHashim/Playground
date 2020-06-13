@@ -6,12 +6,16 @@ import javax.inject.Inject;
  * Created by Mohamed Hashim on 6/13/2020.
  */
 class Coffe {
-    private Farm farm;
-    private River river;
+    @Inject
+    Farm farm;
+    @Inject
+    River river;
 
     @Inject
-    public Coffe(Farm farm, River river) {
-        this.farm = farm;
-        this.river = river;
+    public Coffe() {
+    }
+
+    public String makeCoffe() {
+        return farm.getBeans() + " + " + river.getWater();
     }
 }

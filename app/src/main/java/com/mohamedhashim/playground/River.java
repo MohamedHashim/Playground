@@ -10,4 +10,8 @@ class River {
     @Inject
     public River() {
     }
+
+    String getWater() {
+        return "Water";
+    }
 }
