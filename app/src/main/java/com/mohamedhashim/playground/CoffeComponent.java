@@ -8,4 +8,6 @@ import dagger.Component;
 @Component
 interface CoffeComponent {
     Coffe getCoffe();
+
+    void inject(MainActivity mainActivity);
 }
