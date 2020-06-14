@@ -12,14 +12,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     @Inject
-    Coffe coffe;
+    Coffe coffe, coffe2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CoffeComponent coffeComponent = DaggerCoffeComponent.builder().sugar(4).milk(5).build();
+        CoffeComponent coffeComponent=((MyApplication) getApplication()).getCoffeComponent();
         coffeComponent.inject(this);
-        Log.d(TAG, "onCreate: " + coffe.makeCoffe());
+        Log.d(TAG, "onCreate: " + coffe.makeCoffe() + "\ncoffe no:" + coffe.river + "\ncoffe2 no:" + coffe2.river);
     }
 }
