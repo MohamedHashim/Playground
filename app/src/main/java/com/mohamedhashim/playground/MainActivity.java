@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppComponent appComponent = ((MyApplication) getApplication()).getAppComponent();
-        CoffeComponent coffeComponent = DaggerCoffeComponent.builder().sugar(4).milk(5).appComponent(appComponent).build();
+        CoffeComponent coffeComponent = appComponent.coffeComponentBuilder().sugar(4).milk(5).build();
         coffeComponent.inject(this);
 
         Log.d(TAG, "onCreate: " + coffe.makeCoffe() +

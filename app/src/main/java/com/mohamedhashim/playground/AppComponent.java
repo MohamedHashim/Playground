@@ -10,5 +10,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = CoffeModule.class)
 interface AppComponent {
-    River getRiver();
+
+    //Remove getRiver method and implement coffeComponent builder as subComponent
+    CoffeComponent.Builder coffeComponentBuilder();
 }
