@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CoffeComponent coffeComponent = DaggerCoffeComponent.builder().sugar(4).build();
+        CoffeComponent coffeComponent = DaggerCoffeComponent.builder().sugar(4).milk(5).build();
         coffeComponent.inject(this);
         Log.d(TAG, "onCreate: " + coffe.makeCoffe());
     }
