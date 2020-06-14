@@ -1,7 +1,6 @@
 package com.mohamedhashim.playground;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
@@ -9,8 +8,8 @@ import dagger.Component;
 /**
  * Created by Mohamed Hashim on 6/13/2020.
  */
-@Singleton
-@Component(modules = CoffeModule.class)
+@ActivityScopeSingleton
+@Component(dependencies = AppComponent.class)
 interface CoffeComponent {
     Coffe getCoffe();
 
@@ -27,6 +26,8 @@ interface CoffeComponent {
 
         @BindsInstance  //to let it know that sugar is a dependency can be taken
         Builder milk(@Named("milk") int milk);
+
+        Builder appComponent(AppComponent appComponent);
 
         CoffeComponent build();
 

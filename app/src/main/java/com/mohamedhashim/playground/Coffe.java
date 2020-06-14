@@ -8,6 +8,7 @@ import javax.inject.Named;
 /**
  * Created by Mohamed Hashim on 6/13/2020.
  */
+@ActivityScopeSingleton
 class Coffe {
     private static final String TAG = "Coffe";
     @Inject

@@ -1,21 +1,22 @@
 package com.mohamedhashim.playground;
 
-import android.app.Application;
-
 /**
  * Created by Mohamed Hashim on 6/14/2020.
  */
-public class MyApplication extends Application {
-    private CoffeComponent coffeComponent;
+public class MyApplication extends android.app.Application {
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        coffeComponent = DaggerCoffeComponent.builder().sugar(4).milk(5).build();
+        appComponent = DaggerAppComponent.create();
 
     }
+    // Remove CoffeComponent getter to create different instances in new activities or restarting it
+    //Implement AppComponent getter to make it has only one instance in all app activities
 
-    public CoffeComponent getCoffeComponent() {
-        return coffeComponent;
+
+    public AppComponent getAppComponent() {
+        return appComponent;
     }
 }

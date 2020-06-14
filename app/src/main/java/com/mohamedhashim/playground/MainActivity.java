@@ -18,8 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CoffeComponent coffeComponent=((MyApplication) getApplication()).getCoffeComponent();
+        AppComponent appComponent = ((MyApplication) getApplication()).getAppComponent();
+        CoffeComponent coffeComponent = DaggerCoffeComponent.builder().sugar(4).milk(5).appComponent(appComponent).build();
         coffeComponent.inject(this);
-        Log.d(TAG, "onCreate: " + coffe.makeCoffe() + "\ncoffe no:" + coffe.river + "\ncoffe2 no:" + coffe2.river);
+
+        Log.d(TAG, "onCreate: " + coffe.makeCoffe() +
+                "\ncoffe river 1 no:" + coffe.river + "\ncoffe2 no:" + coffe2.river +
+                "\ncoffe river 2 no:" + coffe + "\n coffe2 no:" + coffe2);
     }
 }
