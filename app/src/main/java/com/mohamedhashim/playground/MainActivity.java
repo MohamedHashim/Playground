@@ -7,7 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.CompletableObserver;
+import io.reactivex.rxjava3.core.MaybeObserver;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.SingleObserver;
+import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.observables.ConnectableObservable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.subjects.AsyncSubject;
@@ -161,4 +167,83 @@ public class MainActivity extends AppCompatActivity {
         sleep(1000);
         asyncSubject.onComplete();
     }
+
+    // types of observers
+    Observer observer = new Observer() {
+        @Override
+        public void onSubscribe(@NonNull Disposable d) {
+
+        }
+
+        @Override
+        public void onNext(Object o) {
+
+        }
+
+        @Override
+        public void onError(@NonNull Throwable e) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    };
+
+    SingleObserver singleObserver = new SingleObserver() {
+        @Override
+        public void onSubscribe(@NonNull Disposable d) {
+
+        }
+
+        @Override
+        public void onSuccess(Object o) {
+
+        }
+
+        @Override
+        public void onError(@NonNull Throwable e) {
+
+        }
+    };
+
+    MaybeObserver maybeObserver = new MaybeObserver() {
+        @Override
+        public void onSubscribe(@NonNull Disposable d) {
+
+        }
+
+        @Override
+        public void onSuccess(Object o) {
+
+        }
+
+        @Override
+        public void onError(@NonNull Throwable e) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    };
+
+    CompletableObserver completableObserver = new CompletableObserver() {
+        @Override
+        public void onSubscribe(@NonNull Disposable d) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+
+        @Override
+        public void onError(@NonNull Throwable e) {
+
+        }
+    };
 }
