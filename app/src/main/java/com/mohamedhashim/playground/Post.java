@@ -11,11 +11,12 @@ class Post {
     @PrimaryKey(autoGenerate = true)
     int id;
     String title;
+    String body;
     int userId;
 
-    public Post(int id, String title, int userId) {
-        this.id = id;
+    public Post(int userId, String title, String body) {
         this.title = title;
+        this.body = body;
         this.userId = userId;
     }
 }
